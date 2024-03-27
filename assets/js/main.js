@@ -15,16 +15,16 @@ function loadPokemonItens(offset, limit) {
                     <span class="number">
                         <div class="badge-number-container">
                             <button class="badge-heart-button" data-state="inactive">
-                                <img class="badge-heart" src="/pokedex/assets/img/heartEmpty.svg" alt="Favorite">
+                                <img class="badge-heart" src="/assets/img/heartEmpty.svg" alt="Favorite">
                             </button>
                             <button class="badge-shiny-button" data-state="inactive">
-                                <img class="badge-shiny" src="/pokedex/assets/img/ShinyMarkEmpty.svg" alt="Shiny">
+                                <img class="badge-shiny" src="/assets/img/ShinyMarkEmpty.svg" alt="Shiny">
                             </button>
                             <button class="badge-pokeball-button" data-state="inactive">
-                                <img class="badge-pokeball" src="/pokedex/assets/img/PokeballEmpty.svg" alt="Caught">
+                                <img class="badge-pokeball" src="/assets/img/PokeballEmpty.svg" alt="Caught">
                             </button>
                             <button class="badge-trade-button" data-state="inactive">
-                                <img class="badge-trade" src="/pokedex/assets/img/TradeV2Empty.svg" alt="Tradeable">
+                                <img class="badge-trade" src="/assets/img/TradeV2Empty.svg" alt="Tradeable">
                             </button>
                         </div>
                         #${pokemon.number}
@@ -35,7 +35,7 @@ function loadPokemonItens(offset, limit) {
                             ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
                         </ol>
                         <div class="pokeContainer">
-                            <img class="back-img" src="/pokedex/assets/img/PokeTextBackTilt.png">
+                            <img class="back-img" src="/assets/img/PokeTextBackTilt.png">
                             <img class="poke-photo" src="${pokemon.photo}" alt="${pokemon.name}" data-cry="${pokemon.cries}" data-normal="${pokemon.photo}" data-shiny="${pokemon.photoSh}">
 
                         </div>
@@ -62,10 +62,10 @@ function loadPokemonItens(offset, limit) {
                 // Alternar as classes e o atributo src da imagem com base no estado atual
                 if (currentState === 'inactive') {
                     button.setAttribute('data-state', 'active');
-                    button.querySelector('.badge-heart').src = "/pokedex/assets/img/heartColored.svg";
+                    button.querySelector('.badge-heart').src = "/assets/img/heartColored.svg";
                 } else {
                     button.setAttribute('data-state', 'inactive');
-                    button.querySelector('.badge-heart').src = "/pokedex/assets/img/heartEmpty.svg";
+                    button.querySelector('.badge-heart').src = "/assets/img/heartEmpty.svg";
                 }
             });
         });
@@ -81,12 +81,12 @@ function loadPokemonItens(offset, limit) {
                 // Alterar a imagem com base no estado atual do botão
                 if (currentState === 'inactive') {
                     button.setAttribute('data-state', 'active');
-                    button.querySelector('.badge-shiny').src = "/pokedex/assets/img/ShinyMarkColored.svg";
+                    button.querySelector('.badge-shiny').src = "/assets/img/ShinyMarkColored.svg";
                     // Alterar a imagem de poke-photo para a versão brilhante
                     pokemonPhoto.src = pokemonPhoto.dataset.shiny;
                 } else {
                     button.setAttribute('data-state', 'inactive');
-                    button.querySelector('.badge-shiny').src = "/pokedex/assets/img/ShinyMarkEmpty.svg";
+                    button.querySelector('.badge-shiny').src = "/assets/img/ShinyMarkEmpty.svg";
                     // Voltar a imagem de poke-photo para a versão padrão
                     pokemonPhoto.src = pokemonPhoto.dataset.normal;
                 }
@@ -100,19 +100,19 @@ function loadPokemonItens(offset, limit) {
                 // Alternar as classes e o atributo src da imagem com base no estado atual
                 if (currentState === 'inactive') {
                     button.setAttribute('data-state', 'active');
-                    button.querySelector('.badge-pokeball').src = "/pokedex/assets/img/PokeballColored.svg";
+                    button.querySelector('.badge-pokeball').src = "/assets/img/PokeballColored.svg";
                 } else if (currentState === 'active') {
                     button.setAttribute('data-state', 'active-shiny');
-                    button.querySelector('.badge-pokeball').src = "/pokedex/assets/img/PokeballColoredShiny.svg";
+                    button.querySelector('.badge-pokeball').src = "/assets/img/PokeballColoredShiny.svg";
                 } else if (currentState === 'active-shiny') {
                     button.setAttribute('data-state', 'active-event');
-                    button.querySelector('.badge-pokeball').src = "/pokedex/assets/img/PokeballColoredEvent.svg";
+                    button.querySelector('.badge-pokeball').src = "/assets/img/PokeballColoredEvent.svg";
                 } else if (currentState === 'active-event') {
                     button.setAttribute('data-state', 'active-event-shiny');
-                    button.querySelector('.badge-pokeball').src = "/pokedex/assets/img/PokeballColoredEventSh.svg";
+                    button.querySelector('.badge-pokeball').src = "/assets/img/PokeballColoredEventSh.svg";
                 } else {
                     button.setAttribute('data-state', 'inactive');
-                    button.querySelector('.badge-pokeball').src = "/pokedex/assets/img/PokeballEmpty.svg";
+                    button.querySelector('.badge-pokeball').src = "/assets/img/PokeballEmpty.svg";
                 }
             });
         });
@@ -125,13 +125,13 @@ function loadPokemonItens(offset, limit) {
                 // Alternar os estados e a imagem com base no estado atual
                 if (currentState === 'inactive') {
                     button.setAttribute('data-state', 'active');
-                    button.querySelector('.badge-trade').src = "/pokedex/assets/img/TradeV2Colored.svg";
+                    button.querySelector('.badge-trade').src = "/assets/img/TradeV2Colored.svg";
                 } else if (currentState === 'active') {
                     button.setAttribute('data-state', 'active-shiny');
-                    button.querySelector('.badge-trade').src = "/pokedex/assets/img/TradeV2ColoredShiny.svg";
+                    button.querySelector('.badge-trade').src = "/assets/img/TradeV2ColoredShiny.svg";
                 } else {
                     button.setAttribute('data-state', 'inactive');
-                    button.querySelector('.badge-trade').src = "/pokedex/assets/img/TradeV2Empty.svg";
+                    button.querySelector('.badge-trade').src = "/assets/img/TradeV2Empty.svg";
                 }
             });
         });
